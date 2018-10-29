@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class noticiasController extends Controller
+class clientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,11 @@ class noticiasController extends Controller
     public function index()
     {
         //
+        $dados = array(
+            'page_active' => 'clientes'
+        );
+
+        return view('admin.cadastros.clientes.clientes', compact('dados'));
     }
 
     /**

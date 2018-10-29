@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('admin.dashboard');
 });
+
+Route::get('/', 'dashboardController@index');
+Route::get('/clientes', 'clientesController@index');

@@ -31,15 +31,18 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-            <li class="treeview">
+            <li class="@if(isset($dados['page_active']) && ($dados['page_active'] == 'dashboard'))active @endif"><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li class="treeview @if(isset($dados['page_active']) && ($dados['page_active'] == 'clientes'))active menu-open @endif">
                 <a href="#"><i class="fa fa-pencil-square-o"></i> <span>Cadastros</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-group"></i> Clientes</a></li>
+                    @php
+                        //var_dump()
+                    @endphp
+                    <li class="@if(isset($dados['page_active']) && ($dados['page_active'] == 'clientes'))active @endif"><a href="/clientes"><i class="fa fa-group"></i> Clientes</a></li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-circle-o"></i> Level Two
                             <span class="pull-right-container">
@@ -47,7 +50,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                            <li class=><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
                             <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
                         </ul>
                     </li>

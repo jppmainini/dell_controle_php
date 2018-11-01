@@ -18,6 +18,7 @@ class CreateClientesTable extends Migration
             $table->string('cli_razao');
             $table->string('cli_fantasia');
             $table->string('cli_cpfcnpj', 18);
+            $table->string('cli_rgie', 15);
             $table->char('cli_tipo', 1)->default('F');
             $table->char('cli_ativo', 1)->default('S');
             $table->string('cli_cep', 9);
@@ -30,6 +31,13 @@ class CreateClientesTable extends Migration
             $table->char('cli_pais', 2);
             $table->char('cli_codpais', 5);
             $table->char('cli_codcidade', 8);
+            $table->string('cli_email');
+            $table->string('cli_site');
+            $table->string('cli_site');
+            $table->string('cli_fone1', 14);
+            $table->string('cli_fone2', 14);
+            $table->string('cli_fone3', 14);
+            $table->text('cli_observacao');
             $table->timestamps();
         });
     }
